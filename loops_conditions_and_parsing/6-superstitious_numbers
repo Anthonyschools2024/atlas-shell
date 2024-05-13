@@ -2,26 +2,28 @@
 # Initialize counter
 counter=1
 
-# Start the loop
+# Loop through numbers 1 to 20
 while [ $counter -le 20 ]; do
-    # Display the current number
-    echo "Number: $counter"
-    
-    # Use a case statement to handle special cases
+    # Use case statement to check the current iteration number
     case $counter in
         4)
+            echo "4"
             echo "Bad luck from China"
             ;;
         9)
+            echo "9"
             echo "Bad luck from Japan"
             ;;
         17)
+            echo "17"
             echo "Bad luck from Italy"
             ;;
         *)
-            # Default case, nothing to do here
+            # For other numbers, just display the number
+            echo "$counter"
             ;;
     esac
-    
-    # Increment the counter
+
+    # Increment counter
     ((counter++))
+done
