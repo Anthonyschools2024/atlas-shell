@@ -1,0 +1,10 @@
+#!/bin/bash/env bash
+# Initialize counter
+counter=0
+
+# Start the while loop
+while [ $counter -lt 10 ]; do
+    echo "Best School"
+    # Increment the counter
+    ((counter++))
+done
