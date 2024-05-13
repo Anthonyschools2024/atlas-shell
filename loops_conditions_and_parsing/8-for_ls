@@ -2,7 +2,7 @@
 # Iterate over items in the current directory
 for item in *; do
     # Skip hidden files
-    if [[ $item ==.* ]]; then
+    if [[ $item == . * ]]; then
         continue
     fi
 
