@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-# Iterate over all items in the current directory
+# Iterate over items in the current directory
 for item in *; do
-    # Check if the item is a hidden file (starts with a dot)
-    if [[ $item ==.* ]]; then
-        continue
+    # Check if the item is a file and not a hidden file
+    if [[ -f "$item" &&! "$item" == ".*" ]]; then
+        # Extract the part of the name after the first dash
+        name_after_dash="${item#*-}"
+        echo "$name_after_dash"
     fi
-
-    # Extract the part of the name after the first dash
-    # If there is no dash, just print the item name
-    echo "${item##*-}"
 done
