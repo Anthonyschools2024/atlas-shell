@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Iterate over items in the current directory
+for item in *; do
+    # Skip hidden files
+    if [[ $item ==.* ]]; then
+        continue
+    fi
+
+    # Check if the item is a file or a directory
+    if [[ -f "$item" ]]; then
+        echo "File: ${item#*-}"
+    elif [[ -d "$item" ]]; then
+        echo "Directory: ${item#*-}"
+    fi
+done
