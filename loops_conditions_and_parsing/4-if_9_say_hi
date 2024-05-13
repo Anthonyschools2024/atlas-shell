@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Initialize counter
+counter=0
+
+# Loop 10 times
+while (( counter < 10 )); do
+    # Display "Best School"
+    echo "Best School"
+    
+    # Check if this is the 9th iteration
+    if (( counter == 8 )); then
+        # Display "Hi" on a new line
+        echo "Hi"
+    fi
+    
+    # Increment counter
+    ((counter++))
+done
