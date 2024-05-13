@@ -1,30 +1,32 @@
 #!/usr/bin/env bash
-#!/bin/bash
-
-# Initialize counters
+# Initialize hour and minute variables
 hour=0
-minute=0
+minute=1
 
-# Loop for 12 hours
-while (( hour < 12 )); do
-    # Loop for 59 minutes
-    while (( minute < 59 )); do
-        # Display the current time
-        echo "Hour: $hour Minute: $minute"
+# Loop through hours from 0 to 12
+while (( hour <= 12 )); do
+    # Loop through minutes from 1 to 59
+    while (( minute <= 59 )); do
+        # Display the current time in HH:MM format
+        echo "$hour:$minute"
         
-        # Increment minute
+        # Increment minute by 1
         (( minute++ ))
         
-        # If minute reaches 59, reset it to 1 and increment hour
-        if (( minute == 59 )); then
-            minute=0
+        # If minute reaches 60, reset it to 1 and increment hour by 1
+        if (( minute > 59 )); then
+            minute=1
             (( hour++ ))
         fi
     done
     
-    # If hour reaches 12, break the loop
-    if (( hour == 12 )); then
-        break
-    fi
+    # Reset minute to 1 for the next hour
+    minute=1
+    
+    # Break the inner loop to move to the next hour
+    break
 done
+
+# Use head command to display only the first 70 lines
+head -n 70
 
