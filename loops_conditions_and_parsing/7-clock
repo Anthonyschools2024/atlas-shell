@@ -28,5 +28,3 @@ while (( hour < 12 )); do
     fi
 done
 
-# Display the last time entry
-echo "Hour: $hour Minute: $minute"
